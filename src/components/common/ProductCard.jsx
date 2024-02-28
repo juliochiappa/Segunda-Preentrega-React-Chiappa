@@ -1,12 +1,17 @@
+import "./ProductCard.css"
+import { Link } from "react-router-dom";
 
-export const ProductCard = ({titulo, desc, precio}) => {
+export const ProductCard = ({ img, title, id }) => {
   return (
-    <div style={{border: "2px solid black"}}>
-        <img src="https://res.cloudinary.com/daiikhnag/image/upload/v1707279450/images_uckazq.jpg"/>
-        <h3>{titulo}</h3>
-        <h4>{desc}</h4>
-        <h4>{precio}</h4>
-
-    </div>
-  )
+    <div className="cardContainer">
+      <div className="productContainer"> 
+        <img src={img} alt="" />
+        <h2>{title}</h2>
+        <Link to={`/item/${id}`}>
+        <button>Detalles</button>
+        </Link>
+      </div>
+    </div>  
+  );
 }
+
